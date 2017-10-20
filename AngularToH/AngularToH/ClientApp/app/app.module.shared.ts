@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroDashboardComponent } from './components/hero-dashboard/hero-dashboard.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 @NgModule({
@@ -18,6 +20,8 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
+        HeroesComponent,
+        HeroDashboardComponent,
         HeroDetailComponent,
         HomeComponent
     ],
@@ -30,6 +34,9 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'heroes', component: HeroesComponent },
+            { path: 'hero-dashboard', component: HeroDashboardComponent },
+            { path: 'detail/:id', component: HeroDetailComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
