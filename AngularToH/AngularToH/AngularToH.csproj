@@ -22,10 +22,14 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\classes\hero.ts" />
+    <None Remove="ClientApp\app\services\hero.service.ts" />
+    <None Remove="ClientApp\app\services\mock-heroes.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\classes\hero.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\hero.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\mock-heroes.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
