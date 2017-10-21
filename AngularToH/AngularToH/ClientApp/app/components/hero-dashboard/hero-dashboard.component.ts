@@ -12,7 +12,7 @@ export class HeroDashboardComponent implements OnInit {
 
     constructor(private heroService: HeroService) { }
 
-    ngOnInit(): void {
+    ngOnInit() {
         // Collect top heroes
         this.heroService.getHeroes()
             .then(heroes => this.heroes = heroes.slice(0, 4));

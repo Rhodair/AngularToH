@@ -15,7 +15,7 @@ import { HeroDashboardComponent } from './components/hero-dashboard/hero-dashboa
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'hero-dashboard', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'counter', component: CounterComponent },
     { path: 'fetch-data', component: FetchDataComponent },
