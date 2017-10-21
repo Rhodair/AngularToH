@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -13,6 +13,19 @@ import { CounterComponent } from './components/counter/counter.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroDashboardComponent } from './components/hero-dashboard/hero-dashboard.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
+
+const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'counter', component: CounterComponent },
+    { path: 'fetch-data', component: FetchDataComponent },
+    // Hero specific routes
+    { path: 'hero-dashboard', component: HeroDashboardComponent },
+    { path: 'detail/:id', component: HeroDetailComponent },
+    { path: 'heroes', component: HeroesComponent },
+    // Catch all
+    { path: '**', redirectTo: 'home' }
+];
 
 @NgModule({
     declarations: [
@@ -29,16 +42,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
         CommonModule,
         HttpModule,
         FormsModule,
-        RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'heroes', component: HeroesComponent },
-            { path: 'hero-dashboard', component: HeroDashboardComponent },
-            { path: 'detail/:id', component: HeroDetailComponent },
-            { path: '**', redirectTo: 'home' }
-        ])
+        RouterModule.forRoot(routes)
     ]
 })
 export class AppModuleShared {

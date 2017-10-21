@@ -4,8 +4,6 @@ import { HEROES } from './mock-heroes';
 
 @Injectable()
 export class HeroService {
-    //constructor() { }
-
     getHeroes(): Promise<Hero[]> {
         return Promise.resolve(HEROES);
     }
@@ -16,11 +14,9 @@ export class HeroService {
             setTimeout(() => resolve(this.getHeroes()), 2000);
         });
     }
-    
-    getHero(id: number): Promise<Hero> {
-        return Promise.resolve({ id: 1, name: 'Wildstorm' });
-        //return this.getHeroes()
-        //    .then(heroes => heroes.find(hero => hero.id === id));
-    }
 
+    getHero(id: number): Promise<Hero | undefined> {
+        return this.getHeroes()
+            .then(heroes => heroes.find(hero => hero.id === id));
+    }
 }
